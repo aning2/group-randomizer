@@ -18,5 +18,5 @@ def students_per_group(my_list, n): #n is the number of students per group desir
     return [my_list[x:x+n] for x in range(0, len(my_list), n)]
 
 def number_of_groups(my_list, n): #n is the number of groups desired,
-    d = (len(my_list)//n)
+    d = math.ceil((len(my_list)/n))
     return students_per_group(my_list, d)

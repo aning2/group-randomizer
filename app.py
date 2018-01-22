@@ -26,3 +26,7 @@ def number_of_groups(my_list, n): #n is the number of groups desired,
 
     def clean_list(l):
         return [name for name in l if name not in ['', '\r', '\n', '\r\n']]
+
+    def clean_name(name):
+        temp = name.split(',')
+        return ' '.join(reversed(temp))

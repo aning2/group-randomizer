@@ -11,9 +11,9 @@ for i in range(len(first_column)):
     #print(first_column[i].value)
     random.shuffle(class_list)
 
-def students_per_group(n):
+def students_per_group(n): #n is the number of students per group desired
     return [class_list[x:x+n] for x in range(0, len(class_list), n)]
 
-def number_of_groups(n):
+def number_of_groups(n): #n is the number of groups desired
     d = int((len(class_list)/n))
     return students_per_group(d)

@@ -15,7 +15,7 @@ def index():
     return render_template('index.html', student_names=listToString(student_names))
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST', 'GET'])
 def my_form_post():
     text = request.form['text']
 

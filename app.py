@@ -30,3 +30,10 @@ def number_of_groups(my_list, n): #n is the number of groups desired,
     def clean_name(name):
         temp = name.split(',')
         return ' '.join(reversed(temp))
+
+    def listToString(l):
+        s = ""
+        for i in list:
+            s += (i + '\n')
+
+        return s

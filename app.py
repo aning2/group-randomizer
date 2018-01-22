@@ -22,7 +22,9 @@ def period3():
 	return render_template('index.html', student_names=classlist_period3)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/period1', methods=['POST'])
+@app.route('/period2', methods=['POST'])
+@app.route('/period3', methods=['POST'])
 def my_form_post():
     text = request.form['text']
 

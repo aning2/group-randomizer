@@ -3,8 +3,6 @@ import random
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
-wb = openpyxl.load_workbook(filename='class_list.xlsx')
-
 
 @app.route('/period1')
 def index():
@@ -15,7 +13,7 @@ def index():
     return render_template('index.html', student_names=listToString(student_names))
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['GET', 'POST'])
 def my_form_post():
     text = request.form['text']
 
@@ -35,7 +33,7 @@ def my_form_post():
 
 
 def number_of_groups(n, l):  # n is the number of groups desired,
-    d = (len(l) // n)
+    d = (len(l) + n - 1) // n
     return students_per_group(d, l)
 
 

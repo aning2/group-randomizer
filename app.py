@@ -7,6 +7,11 @@ wb = openpyxl.load_workbook('class_list.xlsx')
 
 @app.route('/period1')
 def index():
+    sheet = wb.get_sheet_names()[0]
+    worksheet = wb.get_sheet_by_name(sheet)
+    student_names = [clean_name(name.value) for name in worksheet['B']]
+    print(type(student_names))
+    return render_template('index.html', student_names=listToString(student_names))
 
 '''ws = wb.active
 first_column = ws['B']

@@ -10,4 +10,7 @@ for i in range(len(first_column)):
     class_list.append(first_column[i].value)
     #print(first_column[i].value)
     random.shuffle(class_list)
-    
+
+def students_per_group(n):
+
+def number_of_groups(n): 

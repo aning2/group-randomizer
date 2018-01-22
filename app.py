@@ -8,7 +8,6 @@ wb = openpyxl.load_workbook('class_list.xlsx')
 @app.route('/period1')
 def index():
 
-
 '''ws = wb.active
 first_column = ws['B']
 class_list = []
@@ -24,6 +23,3 @@ def students_per_group(my_list, n): #n is the number of students per group desir
 def number_of_groups(my_list, n): #n is the number of groups desired,
     d = (len(my_list)+n-1) // n
     return students_per_group(my_list, d)
-
-#print(number_of_groups(class_list, 5))
-#print(students_per_group(class_list, 4))

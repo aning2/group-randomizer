@@ -14,4 +14,6 @@ for i in range(len(first_column)):
 def students_per_group(n):
     return [class_list[x:x+n] for x in range(0, len(class_list), n)]
 
-def number_of_groups(n): 
+def number_of_groups(n):
+    d = int((len(class_list)/n))
+    return students_per_group(d)

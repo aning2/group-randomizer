@@ -5,6 +5,9 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 wb = openpyxl.load_workbook('class_list.xlsx')
 
+@app.route('/period1')
+def index():
+
 
 '''ws = wb.active
 first_column = ws['B']

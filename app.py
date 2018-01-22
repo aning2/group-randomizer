@@ -23,3 +23,6 @@ def students_per_group(my_list, n): #n is the number of students per group desir
 def number_of_groups(my_list, n): #n is the number of groups desired,
     d = (len(my_list)+n-1) // n
     return students_per_group(my_list, d)
+
+    def clean_list(l):
+        return [name for name in l if name not in ['', '\r', '\n', '\r\n']]

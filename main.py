@@ -1,6 +1,5 @@
 import openpyxl
 import random
-import math
 from flask import Flask, request, render_template
 
 wb = openpyxl.load_workbook('class_list.xlsx')

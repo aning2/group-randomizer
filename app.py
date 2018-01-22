@@ -48,16 +48,16 @@ def number_of_groups(my_list, n): #n is the number of groups desired,
     d = (len(my_list)+n-1) // n
     return students_per_group(my_list, d)
 
-    def clean_list(l):
+def clean_list(l):
         return [name for name in l if name not in ['', '\r', '\n', '\r\n']]
 
-    def clean_name(name):
-        temp = name.split(',')
-        return ' '.join(reversed(temp))
+def clean_name(name):
+    temp = name.split(',')
+    return ' '.join(reversed(temp))
 
-    def listToString(l):
-        s = ""
-        for i in list:
-            s += (i + '\n')
+def listToString(l):
+    s = ""
+    for i in list:
+        s += (i + '\n')
 
-        return s
+    return s

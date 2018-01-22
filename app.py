@@ -1,9 +1,10 @@
 import openpyxl
 import random
 from flask import Flask, request, render_template
-app = Flask(__name__)
 
+app = Flask(__name__)
 wb = openpyxl.load_workbook('class_list.xlsx')
+
 
 ws = wb.active
 first_column = ws['B']

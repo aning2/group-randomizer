@@ -13,6 +13,25 @@ def index():
     print(type(student_names))
     return render_template('index.html', student_names=listToString(student_names))
 
+
+@app.route('/', methods=['POST'])
+def my_form_post():
+    text = request.form['text']
+
+    l = text.split('\n')
+    l = clean_list(l)
+    random.shuffle(l)
+
+    radio_buttons = request.form['options']
+    if radio_buttons == 'option1':
+        x = int(request.form['students_number'])
+        groups = students_per_group(x, l)
+    elif radio_buttons == 'option2':
+        x = int(request.form['groups_number'])
+        groups = number_of_groups(x, l)
+
+    return render_template('index.html', groups=groups)
+
 '''ws = wb.active
 first_column = ws['B']
 class_list = []

@@ -1,4 +1,5 @@
 import openpyxl
+import random
 
 wb = openpyxl.load_workbook('class_list.xlsx')
 

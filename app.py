@@ -6,17 +6,22 @@ from helper import *
 app = Flask(__name__)
 app.secret_key='test_secret_key'
 
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
 @app.route('/period1')
 def period1():
-	return render_template('index.html', student_names=classlist_period1)
+	return render_template('period.html', student_names=classlist_period1)
 
 @app.route('/period2')
 def period2():
-	return render_template('index.html', student_names=classlist_period2)
+	return render_template('period.html', student_names=classlist_period2)
 
 @app.route('/period3')
 def period3():
-	return render_template('index.html', student_names=classlist_period3)
+	return render_template('period.html', student_names=classlist_period3)
 
 
 @app.route('/period1', methods=['POST'])
@@ -42,8 +47,8 @@ def form_period1():
             flash(error)
             return redirect(url_for('period1'))
         groups = number_of_groups(x, l)
-        
-    return render_template('index.html', groups=groups)
+
+    return render_template('period.html', groups=groups)
 
 @app.route('/period2', methods=['POST'])
 def form_period2():
@@ -69,7 +74,7 @@ def form_period2():
             return redirect(url_for('period2'))
         groups = number_of_groups(x, l)
 
-    return render_template('index.html', groups=groups)
+    return render_template('period.html', groups=groups)
 
 @app.route('/period3', methods=['POST'])
 def form_period3():
@@ -97,4 +102,4 @@ def form_period3():
             return redirect(url_for('period3'))
         groups = number_of_groups(x, l)
 
-    return render_template('index.html', groups=groups)
+    return render_template('period.html', groups=groups)

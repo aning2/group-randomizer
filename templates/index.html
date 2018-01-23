@@ -1,44 +1,5 @@
-{%extends "base.html"%}
-
-<!-- qa3 -->
+{% extends "base.html" %}
 
 {% block content %}
-	<div class="container">
-		<div class="row">
-			<div class="col mt-2">
-		        <form method="POST">
-		            <textarea class="longInput row" cols="30" rows="10" name="text" style="width:200px; height:500px;">{{student_names}}</textarea>
-		            <div>
-		                <input type="radio" name="options" id="option1" value="option1" checked="checked"> Students per group</input>
-		                <input type="number" name="students_number" value="2"></input>
-		                <br>
-		                <input type="radio" name="options" id="option2" value="option2"> Number of groups </input>
-		                <input type="number" name="groups_number" value="2"></input>
-		            </div>
-		            <input class="row" type="submit">
-		        </form>
-		    </div>
-
-		    <div class="col-xl mt-2">
-		        {% for group in groups %}
-		        <ul class="team">
-		            {% for name in group %}
-		            <li>{{ name }}</li>
-		            {% endfor %}
-		        </ul>
-		        {% endfor %}
-		    </div>
-		</div>
-	</div>
-
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-	    <script>
-	      var messages = {{ messages | safe }};
-	      for (var i=0; i<messages.length; i++) {
-	        alert(messages[i]);
-	      }
-	    </script>
-	  {% endif %}
-	{% endwith %}
+<div><h1 style="margin: 0 autol"> Welcome to Said's and Tawfee's Group Randomizer! </h1></div>
 {% endblock %}
